@@ -1,67 +1,39 @@
-import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { Text, TextInput, View, TouchableOpacity, Image } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
-import {
-  Text,
-  TextInput,
-  View,
-  TouchableOpacity,
-  Image,
-} from "react-native";
-
+import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import styles from "../styles";
 
-export default function LoginScreen() {
+export default function Index() {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1, padding: 20 }}>
-        <View style={styles.navGroup}>
-          <Text style={styles.largeText}>Welcome Back</Text>
+        <View>
           <Text>Enter your email and password to sign in.</Text>
-        </View>
 
-        <View style={styles.formGroup}>
           <TextInput
             placeholder="Email"
             style={styles.inputField}
-            placeholderTextColor="#999"
           />
 
           <View style={styles.passwordGroup}>
             <TextInput
               placeholder="Password"
-              style={[styles.inputField, { flex: 1 }]}
-              placeholderTextColor="#999"
               secureTextEntry
+              style={{ flex: 1 }}
             />
-            <Ionicons name="eye-off" size={20} />
+            <FontAwesome name="eye-slash" size={20} />
           </View>
 
-          <Text style={styles.forgotPasswordText}>
-            Forgot Password?
-          </Text>
+          <TouchableOpacity style={styles.socialMediaButton}>
+            <Image source={require("@/assets/images/google.png")} />
+            <Text>Continue with Google</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.socialMediaButton}>
+            <Image source={require("@/assets/images/facebook.png")} />
+            <Text>Continue with Facebook</Text>
+          </TouchableOpacity>
         </View>
-
-        <TouchableOpacity
-          style={[styles.socialMediaButton, { backgroundColor: "#000" }]}
-        >
-          <Text style={{ color: "#fff" }}>Sign In</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.socialMediaButton}>
-          <Image
-            source={require("@/assets/images/google.png")}
-            style={{ width: 20, height: 20, marginRight: 10 }}
-          />
-          <Text>Continue with Google</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.socialMediaButton}>
-          <Image
-            source={require("@/assets/images/facebook.png")}
-            style={{ width: 20, height: 20, marginRight: 10 }}
-          />
-          <Text>Continue with Facebook</Text>
-        </TouchableOpacity>
       </SafeAreaView>
     </SafeAreaProvider>
   );
