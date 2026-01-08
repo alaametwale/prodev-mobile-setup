@@ -14,21 +14,19 @@ export default function Index() {
     <SafeAreaProvider>
       <SafeAreaView style={{ flex: 1 }}>
         <ImageBackground
-          source={require("../assets/images/background-image.png")}
+          source={require("@/assets/images/background-image.png")}
           style={styles.background}
           resizeMode="cover"
         >
           <View style={styles.container}>
             <View style={styles.companyLogo}>
-              <Image source={require("../assets/images/Logo.png")} />
+              <Image source={require("@/assets/images/Logo.png")} />
             </View>
 
             <View style={styles.textGroup}>
               <Text style={styles.textLarge}>Find your favorite place here</Text>
               <Text style={styles.textSmall}>The best prices for over 2 </Text>
-              <Text style={styles.textSmall}>
-                million properties worldwide
-              </Text>
+              <Text style={styles.textSmall}>million properties worldwide</Text>
             </View>
 
             <View style={{ position: "absolute", bottom: 0, width: "100%" }}>
